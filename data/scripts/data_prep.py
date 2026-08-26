@@ -83,6 +83,12 @@ def data_prepare():
       - df["pressure_rolling_mean"]
   )
 
+  #shortening the long float numbers
+  numeric_columns = df.select_dtypes(
+      include="number"
+  ).columns
+
+  df[numeric_columns] = df[numeric_columns].round(4)
 
   OUTPUT_FILE.parent.mkdir(
     parents=True,
