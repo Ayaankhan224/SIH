@@ -89,7 +89,7 @@ def validate_aws_data():
 
   
   #NUMERIC VALIDATION
-  print("\nChecking numeric values...")
+  print("\nChecking numeric values:")
 
   numeric_columns = [
     "tempr",
@@ -163,4 +163,4 @@ def validate_aws_data():
   print("VALIDATION COMPLETE")
 
 if __name__ == "__main__":
-    validate_aws_data()
+  validate_aws_data()
