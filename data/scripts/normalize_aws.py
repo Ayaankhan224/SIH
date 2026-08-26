@@ -24,6 +24,7 @@ def normalize_aws_data():
   #converting timestamps
   df["timestamp"] = pd.to_datetime(
     df['timestamp'],
+    format="%Y-%m-%d %H:%M:%S",
     errors="coerce" #coerce mtlb errors ko forcefully convert kr dega
   )
 
