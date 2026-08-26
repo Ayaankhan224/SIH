@@ -1,9 +1,11 @@
 from pathlib import Path
 import pandas as pd
 from sklearn.ensemble import IsolationForest
+import joblib
 
 INPUT_FILE = Path("data/processed/aws_features_2012.csv")
 OUTPUT_FILE = Path("data/processed/aws_anomalies_2012.csv")
+MODEL_FILE = Path("ml/models/anomaly_model.pkl")
 
 def train_anomaly_detector():
   print("LOADING PREPARED AWS DATA")
@@ -48,6 +50,11 @@ def train_anomaly_detector():
 
   model.fit(X)
 
+
+  MODEL_FILE.parent.mkdir(parents=True, exist_ok=True)
+  joblib.dump(model, MODEL_FILE)
+  print(f"Model saved to: {MODEL_FILE}")
+
   #prediction
   #1 : normal
   #-1 : anomaly
@@ -79,6 +86,7 @@ def train_anomaly_detector():
   print(f"{(model_data['prediction']==-1).sum()}")
 
   print(f"Saved to: {OUTPUT_FILE}")
+
 
 if __name__ == '__main__':
   train_anomaly_detector()

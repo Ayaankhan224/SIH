@@ -154,7 +154,7 @@ def main():
   if OUTPUT_FILE.exists():
     OUTPUT_FILE.unlink()
 
-  #WEATHER UNION LOCATION
+  #WEATHER UNION LOCATION (Salt Lake, Kolkata)
   latitude = 22.582808
   longitude = 88.416526
 
