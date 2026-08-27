@@ -18,18 +18,14 @@ def train_anomaly_detector():
     "humidity",
     "wind_speed",
     "wind_direction",
-    "pressure",
     "temperature_change",
     "humidity_change",
-    "pressure_change",
     "wind_speed_change",
     "temperature_rolling_mean",
     "temperature_rolling_std",
     "humidity_rolling_mean",
-    "pressure_rolling_mean",
     "temperature_deviation",
     "humidity_deviation",
-    "pressure_deviation",
   ]
 
   model_data = df.dropna(
